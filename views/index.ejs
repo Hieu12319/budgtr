@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs") %>
+<body style="background-color:<%=col%>;">
+    <div class="container">
+          <nav>
+            <a class="button" href="/budgets/new"> New Budget </a>
+        </nav>
+        <h1>budgtr ALL</h1>
+      
+        <table>
+            <% for (let i = 0; i < allBudgets.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= allBudgets[i].date %>
+                    </td>
+                    <td>
+                        <a href="/budgets/<%= i %>"> <%= allBudgets[i].name %></a>
+                    </td>
+                    <td>
+                        <%= allBudgets[i].amount %>
+                    </td>
+                </tr>
+          <%  } %>
+        </table>
+
+    </div>
+</body>
+</html>
